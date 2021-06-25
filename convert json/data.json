@@ -1,0 +1,20 @@
+[
+    {
+        "Id": "1",
+        "Name": "Fatima",
+        "App Name": "Healthy food",
+        "Email": "fatima@gmail.com"
+    },
+    {
+        "Id": "2",
+        "Name": "Asmae",
+        "App Name": "Daily Reminder",
+        "Email": "asmae@gmail.com"
+    },
+    {
+        "Id": "3",
+        "Name": "Omar",
+        "App Name": "Fishing",
+        "Email": "omar@gmail.com"
+    }
+]
