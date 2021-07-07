@@ -8,7 +8,6 @@
 <html lang="en">
 	<META HTTP-EQUIV=Refresh; 
 	<head>
-	<link rel="stylesheet" href="../style/Style.css">
 		<title>CONNECTED</title>
 		
 	

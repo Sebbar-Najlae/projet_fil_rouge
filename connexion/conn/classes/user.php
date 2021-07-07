@@ -53,10 +53,8 @@ class user{
 			header("Location: ../index.php?error=1");
 			return false;
 		} else {
-			while($row=$UserRequest->fetch()){
-				$this->setUserId($row['UserId']);
-                header("Location: indexdash.php");
-				return true;
+			header("Location: indexdash.php");
+			return true;
 			}
 		} 
 		//return $UserRequest->rowCount();
