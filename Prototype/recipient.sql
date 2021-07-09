@@ -32,7 +32,7 @@ CREATE TABLE `recipient` (
   `email` varchar(255) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `body` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `dateSend` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -55,6 +55,8 @@ ALTER TABLE `recipient`
 ALTER TABLE `recipient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
+
+INSERT INTO `recipient`(`email`, `subject`, `body`, `dateSend`) VALUES ('prototype@gmail.com','test','deuxieme test','2021-07-09')
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
