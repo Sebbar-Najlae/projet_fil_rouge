@@ -10,6 +10,21 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 // create instance of phpmailer
 $mail = new PHPMailer();
+// connect to database
+$dbh = new PDO("mysql:host=localhost;dbname=remyurda","root","");
+// link to table
+$req= "SELECT * FROM recipient";
+
+// fetch email
+$result = $dbh->prepare($req);
+$result->execute();
+while($row = $result->fetch(PDO::FETCH_ASSOC)){
+    $email = $row["email"];
+    $subject = $row["subject"];
+    $body = $row["body"];
+
+}
+        
 // Set mailler to use smtp
 $mail->isSMTP();
 // define smtp host
@@ -25,13 +40,13 @@ $mail->Username = "remyurda@gmail.com";
 // set gmail password
 $mail->Password ="";
 // set email subject
-$mail->Subject= "Test Email Using PHPMailer" ;
+$mail->Subject=$subject;
 // set sender email
 $mail->setFrom("no-reply@gmail.com");
 // Email body
-$mail->Body = "This is plain text email body";
+$mail->Body = $body;
 // add recipient
-$mail->addAddress("sebbar.najlae.dev@gmail.com");
+$mail->addAddress($email);
 // finally send email
 if($mail->Send()){
  echo "Email Sent...!";
