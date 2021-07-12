@@ -7,15 +7,15 @@ class Email implements JsonSerializable {
 			 'id' => $this->_id,
              'email' => $this->_email,
              'subject' => $this->_subject,
-             'body' => $this->_body,
-             'dateSend' => $this->_dateSend,
+            //  'body' => $this->_body,
+            //  'dateSend' => $this->_dateSend,
         );
     }
 	private $_id;
 	private $_email;
 	private $_subject;
-	private $_body;
-	private $_dateSend;
+	// private $_body;
+	// private $_dateSend;
 	
 	public function __construct() {
 	
@@ -24,8 +24,8 @@ class Email implements JsonSerializable {
 		public function getId() { return $this->_id; }
 		public function getEmail() { return $this->_email; }
 		public function getSubject() { return $this->_subject; }
-		public function getbody() { return $this->_body; }
-		public function getdateSend() { return $this->_dateSend; }
+		// public function getbody() { return $this->_body; }
+		// public function getdateSend() { return $this->_dateSend; }
 
 
 		public function setId($id){
@@ -40,13 +40,13 @@ class Email implements JsonSerializable {
 					$this->_subject = $subject;
 		}
 
-		public function setBody($body){
-				$this->_body = $body;
-		}
+		// public function setBody($body){
+		// 		$this->_body = $body;
+		// }
 
-		public function setDate($dateSend){
-					$this->_dateSend = $dateSend;
-		}
+		// public function setDate($dateSend){
+		// 			$this->_dateSend = $dateSend;
+		// }
 
 }
 ?>
