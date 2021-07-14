@@ -12,18 +12,8 @@ use PHPMailer\PHPMailer\Exception;
 $mail = new PHPMailer();
 // connect to database
 $dbh = new PDO("mysql:host=localhost;dbname=remyurda","root","");
-// link to table
-$req= "SELECT * FROM recipient";
 
-// fetch email
-$result = $dbh->prepare($req);
-$result->execute();
-while($row = $result->fetch(PDO::FETCH_ASSOC)){
-    $email = $row["email"];
-    $subject = $row["subject"];
-    $body = $row["body"];
 
-}
         
 // Set mailler to use smtp
 $mail->isSMTP();
@@ -39,14 +29,49 @@ $mail->Port="587";
 $mail->Username = "remyurda@gmail.com";
 // set gmail password
 $mail->Password ="";
+
+
 // set email subject
-$mail->Subject=$subject;
+$subject="select subject from recipient ";
+foreach ($dbh->query($subject) as $row) {
+$mail->Subject = $row['subject'];
+}
+
+
 // set sender email
 $mail->setFrom("no-reply@gmail.com");
+
+
 // Email body
-$mail->Body = $body;
+
+
+
+// $body="select body from recipient ";
+// foreach ($dbh->query($body) as $row) {
+// $mail->CreateBody($row['body']);}
+$mail->Body="var locationOne = '/dashboard/getTrend?period=30d&profileId=119';
+var locationTwo = '/dashboard/getTrend?period=30d&profileId=120';
+var multipleURL = [locationOne, locationTwo];
+
+$.each(multipleURL, function (i, url) {
+    $.ajax(url,
+            {
+                type: 'POST',
+                data: {
+                },
+                success: function (data) {
+
+                }
+            }
+    );
+});";
+
+
 // add recipient
-$mail->addAddress($email);
+$email="select email from recipient ";
+foreach ($dbh->query($email) as $row) {
+$mail->AddAddress($row['email']);
+}
 // finally send email
 if($mail->Send()){
  echo "Email Sent...!";

@@ -14,8 +14,8 @@ class emailsManager {
 			$item->setId($row["id"]);
 			$item->setEmail($row["email"]);
 			$item->setSubject($row["subject"]);
-			// $item->setBody($row["body"]);
-			// $item->setDate($row["dateSend"]);
+			$item->setBody($row["body"]);
+			$item->setDateSend($row["dateSend"]);
 			array_push($stack, $item);
 		}
 		return $stack;
@@ -24,24 +24,26 @@ class emailsManager {
 //Add email
 		public function add($email){
 			$dbh = new PDO("mysql:host=localhost;dbname=remyurda","root","");
-			$req = "INSERT INTO `recipient`(`id`,`email`, `subject`,`body`,`dateSend`) VALUES (:id,:email,:subject,:body,:dateSend)";
+			$req = "INSERT INTO `recipient`(`email`, `subject`,`body`,`dateSend`) VALUES (:email,:subject,:body,:dateSend)";
 
 			$updateemailQuery = $dbh ->prepare($req);
-			$updateemailQuery -> bindParam(":id",$email->getId(),PDO::PARAM_STR);	
+			// $updateemailQuery -> bindParam(":id",$email->getId(),PDO::PARAM_STR);
 			$updateemailQuery -> bindParam(":email",$email->getEmail(),PDO::PARAM_STR);
             $updateemailQuery -> bindParam(":subject",$email->getSubject(),PDO::PARAM_STR);
             $updateemailQuery -> bindParam(":body",$email->getBody(),PDO::PARAM_STR);
-            $updateemailQuery -> bindParam(":dateSend",$email->getdateSend(),PDO::PARAM_STR);
+            $updateemailQuery -> bindParam(":dateSend",$email->getDateSend(),PDO::PARAM_STR);
 			$updateemailQuery->execute();
         }
 // update email		
         public function update($email){
 					$id = $email->getId();
 					$dbh = new PDO("mysql:host=localhost;dbname=remyurda","root","");
-					$req = "UPDATE recipient SET email = :email,subject = :subject WHERE id = $id";
+					$req = "UPDATE recipient SET email = :email,subject = :subject,body = :body, dateSend:dateSend WHERE id = $id";
 					$updateemailQuery = $dbh ->prepare($req);
 					$updateemailQuery -> bindParam(":email",$email->getEmail(),PDO::PARAM_STR);
 					$updateemailQuery -> bindParam(":subject",$email->getSubject(),PDO::PARAM_STR);
+					$updateemailQuery -> bindParam(":body",$email->getBody(),PDO::PARAM_STR);
+					$updateemailQuery -> bindParam(":dateSend",$email->getDateSend(),PDO::PARAM_STR);
 	                $updateemailQuery->execute();
 				}
 // delete email
