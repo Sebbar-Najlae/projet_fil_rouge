@@ -34,9 +34,9 @@ class SideBar extends React.Component {
                     </a>
                   </li>
                
-        {/* Mes documents */}
+        {/* Mes Emails */}
         <li className="nav-item">
-          <a href="mesDocuments.html" className="nav-link active">
+          <a href="mesEmails.html" className="nav-link active">
             <i className="nav-icon fas fa-file" />
             <p> Mes E-mails</p>
           </a>

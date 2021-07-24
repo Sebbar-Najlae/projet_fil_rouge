@@ -11,7 +11,7 @@ class Menu extends React.Component {
               <a className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars" /></a>
             </li>
             <li className="nav-item d-none d-sm-inline-block">
-              <a href="mesDocuments.html" className="nav-link">Mes Documents</a>
+              <a href="mesEmails.html" className="nav-link">Mes E-mails</a>
             </li>
           </ul>
         </nav>
