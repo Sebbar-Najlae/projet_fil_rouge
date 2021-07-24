@@ -9,7 +9,7 @@ class AppLogin extends React.Component {
           {/* /.login-logo */}
           <div className="card card-outline card-primary">
             <div className="card-header text-center">
-              <a href="#" className="h2"><b>RAPPEL DES DATTES</b></a>
+              <a href="#" className="h2"><b>Remyurda</b></a>
             </div>
             <div className="card-body">
               <p className="login-box-msg">Sign in to start your session</p>

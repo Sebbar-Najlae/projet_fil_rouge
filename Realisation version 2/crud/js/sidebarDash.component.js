@@ -17,15 +17,17 @@ class SideBar extends React.Component {
                 </div>
                 <div className="info">
                   <a href="#" className="d-block"> 
-                 Remyurda</a>
+                  {/* <?php echo $userLoggedIn->getFirstName(); ?>  */}
+                  Remyurda
+                   </a>
                 </div>
               </div>
               {/* Sidebar Menu */}
               <nav className="mt-2">
-                <ul className="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
+                <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                   {/* Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library */}
-                  <li className="nav-item active">
+                  <li className="nav-item">
                     <a href="dashboard.html" className="nav-link active">
                       <i className="nav-icon fas fa-tachometer-alt" />
                       <p>Dashboard</p>
@@ -49,7 +51,6 @@ class SideBar extends React.Component {
             </p>
           </a>
         </li>
-
 
 
                 </ul>
