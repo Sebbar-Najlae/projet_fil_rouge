@@ -41,13 +41,13 @@ class SideBar extends React.Component {
             <p> Mes E-mails</p>
           </a>
         </li> 
-        {/* calendar */}
+        {/* notification */}
         <li className="nav-item">
-          <a href="calendar.html" className="nav-link">
-            <i className="nav-icon far fa-calendar-alt" />
+          <a href="notification.html" className="nav-link">
+            <i className="nav-icon far fa-bell" />
             <p>
               Notifications
-              <span className="badge badge-info right">2</span>
+              <span className="badge badge-info right">10</span>
             </p>
           </a>
         </li>
