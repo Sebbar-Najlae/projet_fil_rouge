@@ -15,16 +15,18 @@ $client->password = base64_encode(isset($_GET['password']) ? $_GET['password'] :
 // read the details of client to be edited
 $stmt = $client->login();
 if($stmt->rowCount() > 0){
-    // get retrieved row
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    // create array
-    $client_arr=array(
-        "status" => true,
-        "message" => "Successfully Login!",
-        "id" => $row['id'],
-        "lastname"=>$row['lastname'],
-        "email" => $row['email']
-    );
+    // // get retrieved row
+    // $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    // // create array
+    // $client_arr=array(
+    //     "status" => true,
+    //     "message" => "Successfully Login!",
+    //     "id" => $row['id'],
+    //     "lastname"=>$row['lastname'],
+    //     "email" => $row['email']
+    // );
+    header("Location: ../../../crud/dashboard.html");
+
 }
 else{
     $client_arr=array(

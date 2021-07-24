@@ -19,13 +19,15 @@ $client->created = date('Y-m-d H:i:s');
  
 // create the client
 if($client->signup()){
-    $client_arr=array(
-        "status" => true,
-        "message" => "Successfully Signup!",
-        "id" => $client->id,
-        "lastname" => $client->lastname,
-        "email" => $client->email
-    );
+    // $client_arr=array(
+    //     "status" => true,
+    //     "message" => "Successfully Signup!",
+    //     "id" => $client->id,
+    //     "lastname" => $client->lastname,
+    //     "email" => $client->email
+    // );
+
+    header("Location: ../../../crud/dashboard.html");
 }
 else{
     $client_arr=array(
