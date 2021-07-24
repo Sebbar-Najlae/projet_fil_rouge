@@ -9,7 +9,7 @@ class App extends React.Component {
             <div>   
       {/* Site wrapper */}
       <div className="wrapper">
-          <Menu />
+          <Menu1 />
 
           <SideBar />
          

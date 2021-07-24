@@ -1,4 +1,4 @@
-class Menu extends React.Component {
+class Menu1 extends React.Component {
     constructor(props) {
         super(props)
     }
