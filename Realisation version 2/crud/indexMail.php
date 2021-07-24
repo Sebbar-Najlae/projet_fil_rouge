@@ -32,7 +32,7 @@ $mail->Password ="remyurda1234";
 
 
 // set email subject
-$subject="select subject from recipient ";
+$subject="select subject from recipient where dateSend = CURDATE() ";
 foreach ($dbh->query($subject) as $row) {
 $mail->Subject = $row['subject'];
 }
@@ -46,14 +46,14 @@ $mail->setFrom("no-reply@gmail.com");
 
 
 
-$body="select body from recipient ";
+$body="select body from recipient where dateSend = CURDATE()";
 foreach ($dbh->query($body) as $row) {
 // $mail->Body=($row['body']);}
 $mail->Body=$row['body'];}
 
 
 // add recipient
-$email="select email from recipient ";
+$email="select email from recipient where dateSend = CURDATE()";
 foreach ($dbh->query($email) as $row) {
 $mail->AddAddress($row['email']);
 }
@@ -62,7 +62,7 @@ if($mail->Send()){
     header("Location: sent.html");
 }
 else{
-    echo "Error";
+    header("Location: error.html");
 }
 // closing smtp connection
 $mail->smtpClose();
