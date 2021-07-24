@@ -37,7 +37,7 @@ class SideBar extends React.Component {
         {/* Mes Emails */}
         <li className="nav-item">
           <a href="mesEmails.html" className="nav-link">
-            <i className="nav-icon fas fa-fdatabase" />
+            <i className="nav-icon fas fa-database" />
             <p> Mes E-mails</p>
           </a>
         </li> 
