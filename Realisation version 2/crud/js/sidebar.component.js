@@ -13,12 +13,12 @@ class SideBar extends React.Component {
               {/* Sidebar user (optional) */}
               <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div className="image">
-                  <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
+                  <img src="dist/img/R.png" className="img-circle elevation-2" alt="User Image" />
                 </div>
                 <div className="info">
                   <a href="#" className="d-block"> 
                   {/* <?php echo $userLoggedIn->getFirstName(); ?>  */}
-                  asmae
+                  Remyurda
                    </a>
                 </div>
               </div>
@@ -38,7 +38,7 @@ class SideBar extends React.Component {
         <li className="nav-item">
           <a href="mesDocuments.html" className="nav-link active">
             <i className="nav-icon fas fa-file" />
-            <p> Mes Documents</p>
+            <p> Mes E-mails</p>
           </a>
         </li> 
         {/* calendar */}
@@ -46,7 +46,7 @@ class SideBar extends React.Component {
           <a href="calendar.html" className="nav-link">
             <i className="nav-icon far fa-calendar-alt" />
             <p>
-              Calendar
+              Notifications
               <span className="badge badge-info right">2</span>
             </p>
           </a>
