@@ -59,7 +59,7 @@ $mail->AddAddress($row['email']);
 }
 // finally send email
 if($mail->Send()){
- echo "Email Sent...!";
+    header("Location: sent.html");
 }
 else{
     echo "Error";
