@@ -34,7 +34,7 @@ class CrudEmail extends React.Component {
                 email: addemail.value,
                 subject: addsubject.value,
                 body: addbody.value,
-                dateSend: dateSend.value,
+                dateSend: adddateSend.value,
 
             },
             success: function (data) {
@@ -135,19 +135,9 @@ class CrudEmail extends React.Component {
 
                                     <div className="form-row">
                                         <div className="form-group col-12">
-                                            <label htmlFor="inputName4">Email</label>
-                                            <input type="email" className="form-controlemail email" id="addemail" />
-                                            {/* <datalist id="emails">
-                                                <option>Carte d’Identité Nationale Électronique (CINE)</option>
-                                                <option>Passport</option>
-                                                <option>Permis de conduire</option>
-                                                <option>Carte grise</option>
-                                                <option>Carte d’immatriculation</option>
-                                                <option>Carte de résidence</option>
-                                                <option>Contrôle technique
-                                                </option>
-                                                <option>aAsurance des voitures</option>
-                                            </datalist> */}
+                                            <label htmlFor="inputMatricule4">Email</label>
+                                            <input type="email" className="form-control email" id="addemail" placeholder="email"/>
+                                            
 
                                         </div>
                                     </div>

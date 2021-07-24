@@ -52,6 +52,17 @@ class SideBar extends React.Component {
           </a>
         </li>
 
+        <li className="nav-item">
+          <a href="indexMail.php" className="nav-link">
+            <i className="nav-icon far fa-envelope-open" />
+          
+            <p>
+              Envoyer
+              <span className="badge badge-info right">1</span>
+            </p>
+          </a>
+        </li>
+
 
                 </ul>
               </nav>

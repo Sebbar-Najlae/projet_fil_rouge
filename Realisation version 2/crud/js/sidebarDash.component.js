@@ -50,6 +50,15 @@ class SideBar extends React.Component {
               <span className="badge badge-info right">10</span>
             </p>
           </a>
+        </li> <li className="nav-item">
+          <a href="indexMail.php" className="nav-link">
+            <i className="nav-icon far fa-envelope-open" />
+          
+            <p>
+              Envoyer
+              <span className="badge badge-info right">1</span>
+            </p>
+          </a>
         </li>
 
 
