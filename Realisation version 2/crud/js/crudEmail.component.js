@@ -70,15 +70,13 @@ class CrudEmail extends React.Component {
 
 
     //update Email
-    updatEemail() {
+    updateEmail() {
         console.log(this.state.email)
         $.ajax({
             url: "api/updateEmail.php",
             method: "POST",
             data: {
                 id: this.state.email.id,
-              
-
                 email: upemail.value,
                 subject: upsubject.value,
                 body: upbody.value,
@@ -191,7 +189,7 @@ class CrudEmail extends React.Component {
                                 <form
                                     id="form-edit"
                                     className="form-horizontal"
-                                    onSubmit={this.updatEemail.bind(this)}>
+                                    onSubmit={this.updateEmail.bind(this)}>
 
 
                                     <div className="form-row">

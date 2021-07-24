@@ -37,7 +37,7 @@ class SideBar extends React.Component {
         {/* Mes Emails */}
         <li className="nav-item">
           <a href="mesEmails.html" className="nav-link active">
-            <i className="nav-icon fas fa-file" />
+            <i className="nav-icon fas fa-database" />
             <p> Mes E-mails</p>
           </a>
         </li> 
@@ -62,7 +62,15 @@ class SideBar extends React.Component {
             </p>
           </a>
         </li>
-
+        <li className="nav-item">
+          <a href="../../index.html" className="nav-link">
+            <i className="nav-icon far fa-user-circle" />
+          
+            <p>
+              Se Déconnecter
+            </p>
+          </a>
+        </li>
 
                 </ul>
               </nav>
