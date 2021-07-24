@@ -25,7 +25,7 @@ class CrudEmail extends React.Component {
             });
     }
     //add Email
-    addemail() {
+    addEmail() {
         $.ajax({
             url: "api/addEmail.php",
             method: "POST",
@@ -70,19 +70,19 @@ class CrudEmail extends React.Component {
 
 
     //update Email
-    updateemail() {
+    updatEemail() {
         console.log(this.state.email)
         $.ajax({
             url: "api/updateEmail.php",
             method: "POST",
             data: {
-                id_email: this.state.email,
+                id: this.state.email.id,
               
 
-                email: addemail.value,
-                subject: addsubject.value,
-                body: addbody.value,
-                dateSend: adddateSend.value
+                email: upemail.value,
+                subject: upsubject.value,
+                body: upbody.value,
+                dateSend: updateSend.value
             },
             success: function (data) {
                 this.chargementDonnees()
@@ -130,7 +130,7 @@ class CrudEmail extends React.Component {
                                 <form
                                     id="form-add"
                                     className="form-horizontal"
-                                    onSubmit={this.addemail.bind(this)}>
+                                    onSubmit={this.addEmail.bind(this)}>
 
 
                                     <div className="form-row">
@@ -166,7 +166,7 @@ class CrudEmail extends React.Component {
 
                                     <div className="input-group text-right">
                                         <div className="input-group-btn">
-                                            <button type="submit" className="btn btn-primary submit  ">AJOUTER EMAIL</button>
+                                            <button type="submit" className="btn btn-primary submit  ">AJOUTER E-MAIL</button>
 
                                         </div>
                                     </div>
@@ -191,23 +191,37 @@ class CrudEmail extends React.Component {
                                 <form
                                     id="form-edit"
                                     className="form-horizontal"
-                                    onSubmit={this.updateemail.bind(this)}>
+                                    onSubmit={this.updatEemail.bind(this)}>
 
 
                                     <div className="form-row">
                                         <div className="form-group col-12">
                                             <label htmlFor="inputName4">Email</label>
                                             <input type="email"  
-                                            // value={this.state.document.document_name} onChange={(e) => this.setState({ document: {...this.state.document, document_name: e.target.value } })}
-                                             className="form-control email" id="addemail" />
+                                            // value={this.email.email} onChange={(e) => this.setState({ email: {...this.state.email, email: e.target.value } })}
+                                             className="form-control email" id="upemail" />
 
 
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-12">
+                                            <label htmlFor="inputLast4">Objet</label>
+                                            <input type="text"  className="form-control subject" id="upsubject" placeholder="Objet" />
+                                        </div>
+                                    </div>
+
+                                    <div className="form-row">
+                                        <div className="form-group col-12">
+                                            <label htmlFor="inputLast4">Corps</label>
+                                            <input type="text" className="form-control body" id="upbody" placeholder="Corps" />
+                                        </div>
+                                    </div>
+
+                                    <div className="form-row">
+                                        <div className="form-group col-12">
                                             <label htmlFor="inputLast4">Date d'envoie</label>
-                                            <input type="date" className="form-control dateSend" id="adddateSend" placeholder="date" />
+                                            <input type="date" className="form-control dateSend" id="upddateSend" placeholder="date" />
                                         </div>
                                     </div>
 
@@ -217,7 +231,7 @@ class CrudEmail extends React.Component {
 
                                     <div className="input-group text-right">
                                         <div className="input-group-btn">
-                                            <button type="submit" className="btn btn-primary submit  ">AJOUTER DOCUMENT</button>
+                                            <button type="submit" className="btn btn-primary submit  ">Confirmer Votre changement</button>
 
                                         </div>
                                     </div>
