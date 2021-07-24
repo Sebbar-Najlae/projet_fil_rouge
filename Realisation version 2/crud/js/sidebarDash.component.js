@@ -61,7 +61,7 @@ class SideBar extends React.Component {
           </a>
         </li>
         <li className="nav-item">
-          <a href="../../index.html" className="nav-link">
+          <a href="../index.html" className="nav-link">
             <i className="nav-icon far fa-user-circle" />
           
             <p>
